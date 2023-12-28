@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>기구현황</title>
+    </head>
+    <body>
+        <h2>기구 사용 현황</h2>
+        <table border='1'>
+            <colgroup>
+                <col width='60'><col width='200'><col width='100'>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>헬스장</th>
+                    <th>기구 번호</th>
+                    <th>사용 여부</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(i = 0; i < list.length; i++) { %>
+                <tr>
+                    <td><%=list[i].Gym.name %></td>
+                    <td><%=list[i].Machine.mach_id %></td>
+                    <td><%=list[i].Machine.using %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table boader='1'>
+        <h2>게시글 작성</h2>
+        <form action='/machineSel' method='post'>
+            사용자 id : <input type='text' name='user_id'><br>
+            사용할 기구 번호 : <input type='text' name='mach_id'><br>
+            <button type='submit'>사용</button>
+        </form>
+    </body>
+</html>
